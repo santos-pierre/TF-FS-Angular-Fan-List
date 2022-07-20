@@ -1,5 +1,5 @@
 # Fan
-[DEMO](tf-fs-angular-fan-list.vercel.app)
+[DEMO](https://tf-fs-angular-fan-list.vercel.app/fans)
 
 CRUD Fan List
 
