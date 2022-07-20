@@ -1,0 +1,65 @@
+<section class="fan-create">
+  <h3 class="mat-title">Create Fan</h3>
+  <div>
+    <div class="form-actions">
+      <button mat-stroked-button color="warn" (click)="toHome()">CANCEL</button>
+      <button
+        form="fanForm"
+        type="submit"
+        class="add-serie"
+        mat-raised-button
+        color="primary"
+        [disabled]="formGroup.invalid"
+      >
+        SAVE
+      </button>
+    </div>
+    <form [formGroup]="formGroup" (ngSubmit)="handleSubmit()" id="fanForm">
+      <div class="form">
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" />
+          <mat-error *ngIf="formGroup.controls['name'].invalid">You must enter a value</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker" required formControlName="birthDate" />
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="formGroup.controls['birthDate'].hasError('dateError')">{{
+            formGroup.controls['birthDate'].getError('dateError')
+          }}</mat-error>
+          <mat-error *ngIf="formGroup.controls['birthDate'].hasError('required')">
+            You must enter a value
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="space-y">
+        <mat-divider></mat-divider>
+      </div>
+      <div>
+        <div class="space-y">
+          <button type="button" mat-button color="accent" class="add-serie" (click)="addSerie()">
+            Add Serie
+          </button>
+        </div>
+        <div *ngIf="getSeriesForm().controls.length !== 0" formArrayName="series" class="form-series">
+          <mat-form-field appearance="fill" *ngFor="let c of getSeriesForm().controls; let i = index">
+            <mat-label>Serie {{ i + 1 }}</mat-label>
+            <input matInput [formControlName]="i" />
+            <button
+              mat-button
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              type="button"
+              (click)="removeSerie(i)"
+            >
+              <mat-icon>delete_forever</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

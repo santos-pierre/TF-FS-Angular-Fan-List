@@ -1,0 +1,15 @@
+<section class="info">
+  <header>
+    <button mat-raised-button color="primary" (click)="toUpdate()">UPDATE</button>
+  </header>
+  <mat-card>
+    <mat-card-title>{{ fan.name }}</mat-card-title>
+    <mat-card-subtitle>{{ fan.birthDate | date: 'dd-MM-YYYY' }}</mat-card-subtitle>
+    <mat-card-content>
+      <h4 class="serie-title">Series</h4>
+      <mat-list>
+        <mat-list-item *ngFor="let serie of fan.series">{{ serie }}</mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</section>

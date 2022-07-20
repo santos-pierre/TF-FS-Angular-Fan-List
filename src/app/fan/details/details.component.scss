@@ -1,0 +1,17 @@
+.serie-title {
+  margin: 0;
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.75rem; /* 28px */
+}
+
+.info {
+  header {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 8px 0px;
+    justify-content: space-between;
+    button {
+      height: 40px;
+    }
+  }
+}
