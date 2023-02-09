@@ -11,7 +11,7 @@ export const FANS: Fan[] = [
   {
     id: 'Bt60jO-a1hA9DQ8IBi9dY',
     name: 'Ryan',
-    birthDate: new Date('1998-04-13'),
+    birthDate: new Date('1995-04-13'),
     series: ['The Boys', 'One piece', 'Naruto'],
   },
 ];
