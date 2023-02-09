@@ -1,5 +1,5 @@
 <section class="fan-create">
-  <h3 class="mat-title">Create Fan</h3>
+  <h2 class="mat-title">Edit Fan</h2>
   <div>
     <div class="form-actions">
       <button mat-stroked-button color="warn" (click)="toHome()">CANCEL</button>
@@ -9,19 +9,19 @@
         class="add-serie"
         mat-raised-button
         color="primary"
-        [disabled]="formGroup.invalid"
+        [disabled]="formGroup.invalid && (!formGroup.touched || !formGroup.dirty)"
       >
         SAVE
       </button>
     </div>
     <form [formGroup]="formGroup" (ngSubmit)="handleSubmit()" id="fanForm">
       <div class="form">
-        <mat-form-field appearance="fill">
+        <mat-form-field>
           <mat-label>Name</mat-label>
           <input matInput formControlName="name" />
           <mat-error *ngIf="formGroup.controls['name'].invalid">You must enter a value</mat-error>
         </mat-form-field>
-        <mat-form-field appearance="fill">
+        <mat-form-field>
           <mat-label>Choose a date</mat-label>
           <input matInput [matDatepicker]="picker" required formControlName="birthDate" />
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -48,7 +48,6 @@
             <mat-label>Serie {{ i + 1 }}</mat-label>
             <input matInput [formControlName]="i" />
             <button
-              mat-button
               matSuffix
               mat-icon-button
               aria-label="Clear"

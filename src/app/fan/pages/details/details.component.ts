@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Fan } from '../models/Fan';
+import { Fan } from '../../models/Fan';
 
 @Component({
   selector: 'app-details',

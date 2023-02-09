@@ -16,7 +16,7 @@ export type FanDTO = {
 export class FanService {
   private fanList: Fan[];
 
-  constructor(private _router: Router) {
+  constructor() {
     this.fanList = FANS;
   }
 

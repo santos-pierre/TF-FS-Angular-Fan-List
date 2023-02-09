@@ -1,9 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormArray,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Fan } from '../models/Fan';
-import { FanService } from '../services/fan.service';
-import { DateValidator } from '../validators/DateValidator';
+import { Fan } from '../../models/Fan';
+import { FanService } from '../../services/fan.service';
+import { DateValidator } from '../../validators/DateValidator';
 
 @Component({
   selector: 'app-edit',
@@ -29,7 +35,9 @@ export class EditComponent implements OnInit {
     });
     if (this.fan.series.length > 0) {
       for (let i = 0; i < this.fan.series.length; i++) {
-        this.getSeriesForm().push(new FormControl(this.fan.series[i], Validators.required));
+        this.getSeriesForm().push(
+          new FormControl(this.fan.series[i], Validators.required)
+        );
       }
     }
   }

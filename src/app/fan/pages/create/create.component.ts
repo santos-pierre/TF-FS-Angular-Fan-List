@@ -1,8 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormArray,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
-import { FanService } from '../services/fan.service';
-import { DateValidator } from '../validators/DateValidator';
+import { FanService } from '../../services/fan.service';
+import { DateValidator } from '../../validators/DateValidator';
 
 @Component({
   selector: 'app-create',
@@ -12,7 +18,11 @@ import { DateValidator } from '../validators/DateValidator';
 export class CreateComponent implements OnInit {
   formGroup: FormGroup;
 
-  constructor(private _builder: FormBuilder, private _router: Router, private _fanService: FanService) {
+  constructor(
+    private _builder: FormBuilder,
+    private _router: Router,
+    private _fanService: FanService
+  ) {
     this.formGroup = this._builder.group({
       name: [null, Validators.required],
       birthDate: [null, [Validators.required, DateValidator()]],

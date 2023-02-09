@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Fan } from './models/Fan';
-import { FanService } from './services/fan.service';
+import { Fan } from '../../models/Fan';
+import { FanService } from '../../services/fan.service';
 
 @Component({
   selector: 'app-fan',
